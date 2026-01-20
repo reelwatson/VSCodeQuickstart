@@ -20,4 +20,13 @@ private class TaskUtilTests {
         Assert.areEqual('High', taskPriority, 'Task priority is not High as expected.');
 
     }
+
+    @IsTest
+    static void testGetTaskPriorityNull() {
+        String state = 'VER';
+        Test.startTest();
+        String taskPriority = TaskUtil.getTaskPriority(state);
+        Test.stopTest();
+        Assert.areEqual(null, taskPriority, 'Expected null as the state is in invalid 3-letter format.');
+    }
 }
